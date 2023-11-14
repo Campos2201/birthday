@@ -24,7 +24,7 @@
                             <a href="/" class="nav-link">Aniversarios</a>
                         </li>
                         <li class="nav-item">
-                            <a href="/" class="nav-link">Criar Festa</a>
+                            <a href="/Birthdays/create" class="nav-link">Criar Festa</a>
                         </li>
                         <li class="nav-item">
                             <a href="/" class="nav-link">Entrar</a>
@@ -42,5 +42,7 @@
             <p>Fun House &copy; 2020</p>
         </footer>
 
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     </body>
 </html>
