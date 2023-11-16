@@ -33,7 +33,7 @@ Route::get('/contact', function () {
 
 Route::get('/products', function () {
     $busca = request('search');
-    return view('products');
+    return view('products',['busca' => $busca]);
 });
 
 Route::get('/product/{id}', function ($id=null) {
