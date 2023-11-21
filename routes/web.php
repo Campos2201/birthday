@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\BirthdayController;
+use App\Models\Birthday;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,22 +14,16 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-Route::get('/', function () {
-
-    $nome ="Matheus";
-    $idade = 30;
-    $arr = [1,2,3,4,5];
-
-    return view('welcome', [
-        'nome' => $nome,
-        'idade' => $idade,
-        'profissao' => 'Programador',
-        'arr' => $arr
-    ]);
-});
+Route::get('/', [BirthdayController::class, 'index']);
+Route::get('/birthdays/create', [BirthdayController::class, 'create'])->middleware('auth');
+Route::get('/birthdays/{id}', [BirthdayController::class, 'show']);
+Route::post('/birthdays', [BirthdayController::class, 'store']);
+Route::delete('/birthdays/{id}', [BirthdayController::class, 'destroy']);
 
 Route::get('/contact', function () {
     return view('contact');
 });
+
+Route::get('/dashboard',[BirthdayController::class, 'dashboard'])->middleware('auth');
+
 
